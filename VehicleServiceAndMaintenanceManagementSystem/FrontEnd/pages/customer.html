@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management | Smart Auto Care</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body { font-size: 14px; }
+        .sidebar { height: 100vh; }
+        .sidebar .nav-link { color: #adb5bd; }
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover { background-color: #0d6efd; color: white; border-radius: 6px; }
+        .card { border-radius: 12px; }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-md-block bg-dark sidebar p-3">
+            <h4 class="text-white text-center mb-4">Smart Auto Care</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link active" href="customer.html"><i class="bi bi-people"></i> Customers</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicle.html"><i class="bi bi-car-front"></i> Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-tools"></i> Services</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-10 ms-sm-auto px-md-4">
+
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg bg-body shadow-sm mt-3 rounded">
+                <div class="container-fluid">
+                    <span class="navbar-brand fw-bold">Customer Management</span>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary me-2" onclick="toggleTheme()"><i class="bi bi-moon-stars"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Action Bar -->
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <h5 class="fw-bold">Customer List</h5>
+                <div>
+                    <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#customerModal"><i class="bi bi-plus-circle"></i> Add Customer</button>
+                    <button class="btn btn-warning me-2" id="updateCustomerBtn"><i class="bi bi-pencil-square"></i> Update Customer</button>
+                    <button class="btn btn-danger" id="deleteCustomerBtn"><i class="bi bi-trash"></i> Delete Customer</button>
+                </div>
+            </div>
+
+            <!-- Table Card -->
+            <div class="card shadow-sm mt-3">
+                <div class="card-body">
+                    <table id="customerTable" class="table table-striped table-hover">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Loyalty</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Dynamic Data -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- Customer Modal -->
+<div class="modal fade" id="customerModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Customer Form</h5>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Customer ID</label>
+                        <input type="text" class="form-control" id="customerId" readonly>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="customerName">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" id="customerPhone">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="customerEmail">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Address</label>
+                        <input type="text" class="form-control" id="customerAddress">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-success" onclick="saveCustomer()">Save Customer</button>
+                <button class="btn btn-warning text-white" onclick="updateCustomer()">Update Customer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+</script>
+
+</body>
+</html>
