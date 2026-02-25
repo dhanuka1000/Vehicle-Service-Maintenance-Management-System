@@ -1,0 +1,10 @@
+package lk.ijse.backend.repositiry;
+
+import lk.ijse.backend.entity.Mechanic;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+
+public interface MechanicRepository extends JpaRepository<Mechanic, Long> {
+}
