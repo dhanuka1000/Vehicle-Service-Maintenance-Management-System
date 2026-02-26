@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Payment {
+public class PaymentDTO {
 
     private Long paymentId;
     private String paymentMethod;
