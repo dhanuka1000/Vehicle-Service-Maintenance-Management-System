@@ -1,10 +1,9 @@
 package lk.ijse.backend.util;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -12,7 +11,7 @@ import lombok.NoArgsConstructor;
 //hbi front end ekat eka adura ganna ba. ekata e erro eka cpature karasn eka read karanna use karanawa.
 public class APIResponse <T>{
 
-    private int status;
+    private int Code;
     private String message;
     private T data;
 
